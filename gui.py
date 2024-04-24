@@ -32,7 +32,7 @@ class App(customtkinter.CTk):
         self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10))
 
         # sidebar start npk reading button
-        self.start_reading_btn = customtkinter.CTkButton(self.sidebar_frame, command=self.sensor_reading, text="Start Reading")
+        self.start_reading_btn = customtkinter.CTkButton(self.sidebar_frame, text="Start Reading")
         self.start_reading_btn.grid(row=1, column=0, padx=20, pady=10)
         # sidebar npk label and values
         self.nitrogen_lbl = customtkinter.CTkLabel(self.sidebar_frame, text="Nitrogen:")
@@ -62,16 +62,16 @@ class App(customtkinter.CTk):
         self.textbox.grid(row=2, column=1, padx=(10, 10), pady=(10, 10))
         self.textbox.insert("0.0", "Recommendation\n\n" + "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.\n\n" * 20)
 
-    def sensor_reading(self):
+    def sensor_reading():
 
-        self.start_reading_btn.configure(state="disabled")
-        rating_n = helper.fertility_rating_n(3)
-        rating_p = helper.fertility_rating_p(7)
-        rating_k = helper.fertility_rating_k(32)
+        # self.start_reading_btn.configure(state="disabled")
+        # rating_n = helper.fertility_rating_n(3)
+        # rating_p = helper.fertility_rating_p(7)
+        # rating_k = helper.fertility_rating_k(32)
 
-        rating = "%s - %s - %s" %(rating_n, rating_p, rating_k)
+        # rating = "%s - %s - %s" %(rating_n, rating_p, rating_k)
 
-        self.rating_value.configure(text=rating.upper())
+        # self.rating_value.configure(text=rating.upper())
         print("Initialize sensor")
 
     def send(self):
